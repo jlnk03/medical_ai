@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  backend:
+    container_name: backend
+    restart: always
+    build: ./flask_backend
+    environment:
+      - OPENAI_API_KEY
+    ports:
+      - "5000:5000"
+
+  frontend:
+    container_name: frontend
+    restart: always
+    build: ./vite_medical
+    ports:
+      - "3000:3000"
